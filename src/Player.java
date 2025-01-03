@@ -21,5 +21,9 @@ public class Player implements Serializable {
     public String toString() {
         return nickname + " - " + puntuacion + " puntos";
     }
+
+    public String getNickname() {
+        return nickname;
+    }
 }
 

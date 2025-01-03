@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e476259e-41b2-4125-9781-5b5d1e2b9e8b" name="Changes" comment="Se crea un bucle para solicitar al inicio del programa el nickname del usuario, limitado a 15 caracteres de su elección. Servirá para poder registrar la puntuación obtenida en el fichero scores.data">
+    <list default="true" id="e476259e-41b2-4125-9781-5b5d1e2b9e8b" name="Changes" comment="Se crea un método que relaciona la puntuación del usuario con el ranking, para poder ver si su puntuación es suficientemente alta para entrar en el ranking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores.data" beforeDir="false" afterPath="$PROJECT_DIR$/scores.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735921469805</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Se crea un método que relaciona la puntuación del usuario con el ranking, para poder ver si su puntuación es suficientemente alta para entrar en el ranking">
+      <option name="closed" value="true" />
+      <created>1735923358514</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735923358514</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -122,6 +132,7 @@
     <MESSAGE value="Se crea el menú interactivo de la aplicación y se genera la sentencia switch que permite al programa ejecutar una acción u otra en funcion del valor introducido." />
     <MESSAGE value="Se genera un método para que el programa elija un nuevo título una vez se ha adivinado el título completo en el juego. Antes quedaba el titulo expuesto, pero no permitía seguir jugando. Al introducir un valor del menú, no se podian sumar puntos ya que adivinar una letra ya introducida no suma." />
     <MESSAGE value="Se crea un bucle para solicitar al inicio del programa el nickname del usuario, limitado a 15 caracteres de su elección. Servirá para poder registrar la puntuación obtenida en el fichero scores.data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crea un bucle para solicitar al inicio del programa el nickname del usuario, limitado a 15 caracteres de su elección. Servirá para poder registrar la puntuación obtenida en el fichero scores.data" />
+    <MESSAGE value="Se crea un método que relaciona la puntuación del usuario con el ranking, para poder ver si su puntuación es suficientemente alta para entrar en el ranking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crea un método que relaciona la puntuación del usuario con el ranking, para poder ver si su puntuación es suficientemente alta para entrar en el ranking" />
   </component>
 </project>
