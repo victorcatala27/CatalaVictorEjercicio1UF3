@@ -112,4 +112,22 @@ public class Main {
 
         return ranking; // Devolvemos el ranking cargado o vacío
     }
+    private static boolean esPuntuacionAlta(int puntuacion) {
+        ArrayList<Player> ranking = cargarRanking(); // Cargamos el ranking
+
+        if (ranking.size() < 5) {
+            return true;
+        }
+
+        // Revisar si la puntuación es mayor que alguna en el ranking
+        for (Player jugador : ranking) {
+            if (puntuacion > jugador.getPuntuacion()) {
+                return true;
+            }
+        }
+
+        return false; // Si no es mayor que ninguna, no puede entrar
+    }
+
+
 }

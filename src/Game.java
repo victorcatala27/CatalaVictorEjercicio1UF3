@@ -9,28 +9,31 @@ public class Game {
     private String tituloOculto;         // Título oculto con asteriscos
     private int intentos;                // Intentos restantes
     private int puntuacion;              // Puntuación acumulada
-    private HashSet<Character> letrasCorrectas;
-    private HashSet<Character> letrasIncorrectas;
+    private HashSet<Character> letrasCorrectas; // Letras acertadas
+    private HashSet<Character> letrasIncorrectas; // Letras incorrectas
+    private HashSet<String> titulosUsados; // Títulos ya adivinados
+    private ArrayList<String> peliculasDisponibles; // Lista de títulos disponibles
 
     // Constructor
     public Game() {
-        String moviesfile = "movies.txt";
-        ArrayList<String> peliculas = cargarPeliculas(moviesfile);
+        this.letrasCorrectas = new HashSet<>();
+        this.letrasIncorrectas = new HashSet<>();
+        this.titulosUsados = new HashSet<>();
+        String moviesFile = "movies.txt";
+        this.peliculasDisponibles = cargarPeliculas(moviesFile);
 
-        if (peliculas.isEmpty()) {
-            System.out.println("No se encontraron películas en el archivo");
+        if (peliculasDisponibles.isEmpty()) {
+            System.out.println("No se encontraron películas en el archivo.");
             return;
         }
 
-        this.letrasCorrectas = new HashSet<>();
-        this.letrasIncorrectas = new HashSet<>();
-        this.tituloPelicula = seleccionarPeliculaAleatoria(peliculas);
-        this.tituloOculto = ocultarTitulo(this.tituloPelicula);
+        // Seleccionar el primer título
+        seleccionarNuevoTitulo();
         this.intentos = 10; // Número máximo de intentos
         this.puntuacion = 0; // Puntuación inicial
     }
 
-    // Metodo para cargar las películas desde el archivo
+    // Método para cargar las películas desde el archivo
     private ArrayList<String> cargarPeliculas(String rutaArchivo) {
         ArrayList<String> peliculas = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(rutaArchivo))) {
@@ -43,51 +46,65 @@ public class Game {
         return peliculas;
     }
 
-    // Metodo para seleccionar una película al azar
-    private String seleccionarPeliculaAleatoria(ArrayList<String> peliculas) {
+    // Método para seleccionar un nuevo título aleatorio
+    public void seleccionarNuevoTitulo() {
+        if (peliculasDisponibles.isEmpty()) {
+            System.out.println("¡No quedan más títulos por adivinar!");
+            this.tituloPelicula = null;
+            return;
+        }
+
         Random random = new Random();
-        return peliculas.get(random.nextInt(peliculas.size()));
+        String nuevoTitulo;
+
+        do {
+            nuevoTitulo = peliculasDisponibles.get(random.nextInt(peliculasDisponibles.size()));
+        } while (titulosUsados.contains(nuevoTitulo));
+
+        this.titulosUsados.add(nuevoTitulo); // Marcar como usado
+        this.peliculasDisponibles.remove(nuevoTitulo); // Eliminar de las disponibles
+        this.tituloPelicula = nuevoTitulo;
+        this.tituloOculto = ocultarTitulo(nuevoTitulo);
+        this.letrasCorrectas.clear();
+        this.letrasIncorrectas.clear();
+        this.intentos = 10; // Reiniciar intentos para el nuevo título
     }
 
-    // Metodo para ocultar el título con asteriscos
+    // Método para ocultar el título con asteriscos
     private String ocultarTitulo(String titulo) {
         return titulo.replaceAll("[a-zA-Z]", "*"); // Reemplaza letras con '*'
     }
 
-    // Metodo para adivinar una letra
+    // Método para adivinar una letra
     public boolean adivinarLetra(char letra) {
-        letra = Character.toLowerCase(letra); // Convertir a minúscula para evitar problemas de mayúsculas/minúsculas
+        letra = Character.toLowerCase(letra);
 
-        // Verificar si la letra ya fue introducida
         if (letrasCorrectas.contains(letra)) {
             System.out.println("Ya has acertado la letra '" + letra + "'. No se sumarán puntos.");
-            return true; // Se considera un acierto porque ya estaba
+            return true;
         }
         if (letrasIncorrectas.contains(letra)) {
             System.out.println("Ya has fallado la letra '" + letra + "'. No se restarán puntos.");
-            return false; // Se considera un fallo porque ya estaba
+            return false;
         }
 
-        // Comprobar si la letra está en el título
         boolean encontrada = false;
         StringBuilder tituloActualizado = new StringBuilder(tituloOculto);
 
         for (int i = 0; i < tituloPelicula.length(); i++) {
             if (Character.toLowerCase(tituloPelicula.charAt(i)) == letra) {
                 tituloActualizado.setCharAt(i, tituloPelicula.charAt(i));
-                encontrada = true; // Marcar como encontrada
+                encontrada = true;
             }
         }
 
         if (encontrada) {
-            // Actualizar el título oculto, añadir la letra a las correctas y sumar puntos
             tituloOculto = tituloActualizado.toString();
             letrasCorrectas.add(letra);
             puntuacion += 10;
             System.out.println("¡Correcto! La letra '" + letra + "' está en el título.");
             return true;
         } else {
-            // Añadir la letra a las incorrectas y restar puntos
             letrasIncorrectas.add(letra);
             intentos--;
             puntuacion -= 10;
@@ -96,62 +113,35 @@ public class Game {
         }
     }
 
-    // Metodo para adivinar el título completo
+    // Método para adivinar el título completo
     public boolean adivinarTituloCompleto(String titulo) {
-        if (titulo.equalsIgnoreCase(this.tituloPelicula)) { // Comparar ignorando mayúsculas/minúsculas
+        if (titulo.equalsIgnoreCase(this.tituloPelicula)) {
             System.out.println("¡Felicidades! Adivinaste el título correctamente: " + tituloPelicula);
-            puntuacion += 20; // Bonus de puntos por adivinar el título completo
-            reiniciarJuego(); // Reinicia el juego con un nuevo título
-            return true; // El jugador gana
+            puntuacion += 20;
+            seleccionarNuevoTitulo(); // Seleccionar un nuevo título
+            return true;
         } else {
             System.out.println("Lo siento, ese no es el título correcto.");
-            intentos--; // Penalización
-            puntuacion -= 20; // Pérdida de puntos
-            return false; // El juego continúa
+            intentos--;
+            puntuacion -= 20;
+            return false;
         }
     }
 
-
-    // Metodo para reiniciar el juego con un nuevo título
-    public void reiniciarJuego() {
-        String moviesfile = "movies.txt";
-        ArrayList<String> peliculas = cargarPeliculas(moviesfile);
-
-        if (peliculas.isEmpty()) {
-            System.out.println("No se encontraron más películas en el archivo.");
-            return;
-        }
-
-        this.tituloPelicula = seleccionarPeliculaAleatoria(peliculas); // Nuevo título
-        this.tituloOculto = ocultarTitulo(this.tituloPelicula); // Ocultar el nuevo título
-        this.letrasCorrectas.clear(); // Reiniciar letras correctas
-        this.letrasIncorrectas.clear(); // Reiniciar letras incorrectas
-        System.out.println("¡Nuevo título preparado! Sigue jugando.");
-    }
-
-    // Metodo para obtener el título oculto
+    // Métodos getter
     public String getTituloOculto() {
         return tituloOculto;
     }
 
-    //Metodo para obtener los intentos restantes
     public int getIntentos() {
         return intentos;
     }
 
-    public String getTituloPelicula() {
-        return tituloPelicula;
-    }
-
-    //Metodos para obtener la puntuación
     public int getPuntuacion() {
         return puntuacion;
     }
-    public void setPuntuacion(int puntuacion) {
-        this.puntuacion = puntuacion;
-    }
 
-    public void setIntentos(int intentos) {
-        this.intentos = intentos;
+    public String getTituloPelicula() {
+        return tituloPelicula;
     }
 }
