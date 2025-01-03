@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e476259e-41b2-4125-9781-5b5d1e2b9e8b" name="Changes" comment="Definimos la clase Game que contiene características tales como los intentos, el titulo oculto y la puntuacion acumulada. Se define el constructor como paso previo a la implementación de los métodos.">
+    <list default="true" id="e476259e-41b2-4125-9781-5b5d1e2b9e8b" name="Changes" comment="Se generan los métodos que permitirán la posterior utilización de las opciones del menú interactivo. Se prueba el código en un proyecto aparte.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/movies.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,12 +81,21 @@
       <option name="project" value="LOCAL" />
       <updated>1735909169828</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Se generan los métodos que permitirán la posterior utilización de las opciones del menú interactivo. Se prueba el código en un proyecto aparte.">
+      <option name="closed" value="true" />
+      <created>1735913530527</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735913530527</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Comenzamos creando el bucle while que nos permite por ahora leer todos los valores de los títulos de películas ubicados en el fichero movies.txt. Se generan también los bloques try catch para recoger las excepciones." />
     <MESSAGE value="Definimos la clase Game que contiene características tales como los intentos, el titulo oculto y la puntuacion acumulada. Se define el constructor como paso previo a la implementación de los métodos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Definimos la clase Game que contiene características tales como los intentos, el titulo oculto y la puntuacion acumulada. Se define el constructor como paso previo a la implementación de los métodos." />
+    <MESSAGE value="Se generan los métodos que permitirán la posterior utilización de las opciones del menú interactivo. Se prueba el código en un proyecto aparte." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se generan los métodos que permitirán la posterior utilización de las opciones del menú interactivo. Se prueba el código en un proyecto aparte." />
   </component>
 </project>

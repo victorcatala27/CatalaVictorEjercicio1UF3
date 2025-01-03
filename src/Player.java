@@ -1,11 +1,25 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.Serializable;
 
-public class Player {
+public class Player implements Serializable {
     private String nickname;
-    private ArrayList score;
+    private int puntuacion;
 
+    public Player(String nickname, int puntuacion) {
+        this.nickname = nickname;
+        this.puntuacion = puntuacion;
+    }
 
+    public String getNombre() {
+        return nickname;
+    }
 
+    public int getPuntuacion() {
+        return puntuacion;
+    }
 
+    @Override
+    public String toString() {
+        return nickname + " - " + puntuacion + " puntos";
+    }
 }
+
