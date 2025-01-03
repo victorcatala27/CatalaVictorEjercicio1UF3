@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e476259e-41b2-4125-9781-5b5d1e2b9e8b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/movies.txt" afterDir="false" />
+    <list default="true" id="e476259e-41b2-4125-9781-5b5d1e2b9e8b" name="Changes" comment="Comenzamos creando el bucle while que nos permite por ahora leer todos los valores de los títulos de películas ubicados en el fichero movies.txt. Se generan también los bloques try catch para recoger las excepciones.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scores.data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -13,6 +16,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,7 +51,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.prueba.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true"
   }
@@ -55,6 +67,19 @@
       <option name="presentableId" value="Default" />
       <updated>1735900445396</updated>
     </task>
+    <task id="LOCAL-00001" summary="Comenzamos creando el bucle while que nos permite por ahora leer todos los valores de los títulos de películas ubicados en el fichero movies.txt. Se generan también los bloques try catch para recoger las excepciones.">
+      <option name="closed" value="true" />
+      <created>1735905024232</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735905024232</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Comenzamos creando el bucle while que nos permite por ahora leer todos los valores de los títulos de películas ubicados en el fichero movies.txt. Se generan también los bloques try catch para recoger las excepciones." />
+    <option name="LAST_COMMIT_MESSAGE" value="Comenzamos creando el bucle while que nos permite por ahora leer todos los valores de los títulos de películas ubicados en el fichero movies.txt. Se generan también los bloques try catch para recoger las excepciones." />
   </component>
 </project>
