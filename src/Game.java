@@ -54,6 +54,7 @@ public class Game {
         return titulo.replaceAll("[a-zA-Z]", "*"); // Reemplaza letras con '*'
     }
 
+    // Metodo para adivinar una letra
     public boolean adivinarLetra(char letra) {
         letra = Character.toLowerCase(letra); // Convertir a minúscula para evitar problemas de mayúsculas/minúsculas
 
@@ -95,10 +96,12 @@ public class Game {
         }
     }
 
+    // Metodo para adivinar el título completo
     public boolean adivinarTituloCompleto(String titulo) {
         if (titulo.equalsIgnoreCase(this.tituloPelicula)) { // Comparar ignorando mayúsculas/minúsculas
             System.out.println("¡Felicidades! Adivinaste el título correctamente: " + tituloPelicula);
-            puntuacion += 20; // Suma de puntos por adivinar el título completo
+            puntuacion += 20; // Bonus de puntos por adivinar el título completo
+            reiniciarJuego(); // Reinicia el juego con un nuevo título
             return true; // El jugador gana
         } else {
             System.out.println("Lo siento, ese no es el título correcto.");
@@ -108,24 +111,42 @@ public class Game {
         }
     }
 
+
+    // Metodo para reiniciar el juego con un nuevo título
+    public void reiniciarJuego() {
+        String moviesfile = "movies.txt";
+        ArrayList<String> peliculas = cargarPeliculas(moviesfile);
+
+        if (peliculas.isEmpty()) {
+            System.out.println("No se encontraron más películas en el archivo.");
+            return;
+        }
+
+        this.tituloPelicula = seleccionarPeliculaAleatoria(peliculas); // Nuevo título
+        this.tituloOculto = ocultarTitulo(this.tituloPelicula); // Ocultar el nuevo título
+        this.letrasCorrectas.clear(); // Reiniciar letras correctas
+        this.letrasIncorrectas.clear(); // Reiniciar letras incorrectas
+        System.out.println("¡Nuevo título preparado! Sigue jugando.");
+    }
+
     // Metodo para obtener el título oculto
     public String getTituloOculto() {
         return tituloOculto;
     }
 
-    // Metodo para obtener el número de intentos restantes
+    //Metodo para obtener los intentos restantes
     public int getIntentos() {
         return intentos;
-    }
-
-    public int getPuntuacion() {
-        return puntuacion;
     }
 
     public String getTituloPelicula() {
         return tituloPelicula;
     }
 
+    //Metodos para obtener la puntuación
+    public int getPuntuacion() {
+        return puntuacion;
+    }
     public void setPuntuacion(int puntuacion) {
         this.puntuacion = puntuacion;
     }
