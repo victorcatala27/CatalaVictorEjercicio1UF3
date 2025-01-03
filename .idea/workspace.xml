@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e476259e-41b2-4125-9781-5b5d1e2b9e8b" name="Changes" comment="Se crea el menú interactivo de la aplicación y se genera la sentencia switch que permite al programa ejecutar una acción u otra en funcion del valor introducido.">
+    <list default="true" id="e476259e-41b2-4125-9781-5b5d1e2b9e8b" name="Changes" comment="Se genera un método para que el programa elija un nuevo título una vez se ha adivinado el título completo en el juego. Antes quedaba el titulo expuesto, pero no permitía seguir jugando. Al introducir un valor del menú, no se podian sumar puntos ya que adivinar una letra ya introducida no suma.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735919156529</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Se genera un método para que el programa elija un nuevo título una vez se ha adivinado el título completo en el juego. Antes quedaba el titulo expuesto, pero no permitía seguir jugando. Al introducir un valor del menú, no se podian sumar puntos ya que adivinar una letra ya introducida no suma.">
+      <option name="closed" value="true" />
+      <created>1735920927414</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735920927414</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -104,6 +111,7 @@
     <MESSAGE value="Definimos la clase Game que contiene características tales como los intentos, el titulo oculto y la puntuacion acumulada. Se define el constructor como paso previo a la implementación de los métodos." />
     <MESSAGE value="Se generan los métodos que permitirán la posterior utilización de las opciones del menú interactivo. Se prueba el código en un proyecto aparte." />
     <MESSAGE value="Se crea el menú interactivo de la aplicación y se genera la sentencia switch que permite al programa ejecutar una acción u otra en funcion del valor introducido." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se crea el menú interactivo de la aplicación y se genera la sentencia switch que permite al programa ejecutar una acción u otra en funcion del valor introducido." />
+    <MESSAGE value="Se genera un método para que el programa elija un nuevo título una vez se ha adivinado el título completo en el juego. Antes quedaba el titulo expuesto, pero no permitía seguir jugando. Al introducir un valor del menú, no se podian sumar puntos ya que adivinar una letra ya introducida no suma." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se genera un método para que el programa elija un nuevo título una vez se ha adivinado el título completo en el juego. Antes quedaba el titulo expuesto, pero no permitía seguir jugando. Al introducir un valor del menú, no se podian sumar puntos ya que adivinar una letra ya introducida no suma." />
   </component>
 </project>
